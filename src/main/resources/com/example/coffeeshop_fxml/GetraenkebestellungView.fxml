@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="698.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeshop_fxml.GetraenkebestellungController">
+   <children>
+      <BorderPane layoutX="-14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="688.0" prefWidth="1150.0">
+                     <children>
+                        <HBox alignment="CENTER" onDragDetected="#initialize" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="118.0" text="Coffee" textFill="#0b0d0f">
+                                 <font>
+                                    <Font name="Arial Bold" size="33.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Markt" textFill="#0b0d0f">
+                                 <font>
+                                    <Font name="Arial" size="33.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="67.0" prefWidth="391.0" stylesheets="@../values/style.css">
+                           <children>
+                              <TextField prefHeight="35.0" prefWidth="198.0" promptText="Hier Tippen ..." styleClass="transparent" stylesheets="@../values/style.css">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="70.0" styleClass="search-button" stylesheets="@../values/style.css" text="Suchen" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets right="12.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <styleClass>
+                              <String fx:value="search-box" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets left="380.0" right="380.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox alignment="CENTER" prefHeight="445.0" prefWidth="1129.0" stylesheets="@../values/style.css">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="336.0" prefWidth="832.0" styleClass="cards" stylesheets="@../values/style.css">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <VBox prefHeight="415.0" prefWidth="243.0" styleClass="cards" stylesheets="@../values/style.css">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="103.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="34.0" prefWidth="157.0" text="Coffee " textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="preisKaffee" onDragDetected="#initialize" prefHeight="32.0" prefWidth="211.0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@cap.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox alignment="CENTER" prefHeight="108.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="48.0" prefWidth="167.0" text="Anzahl:" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="anzahlKaffee" prefHeight="29.0" prefWidth="152.0" text="0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <ButtonBar buttonMinWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="144.0">
+                                                   <buttons>
+                                                      <Button fx:id="deKaffee" mnemonicParsing="false" onAction="#anzahl" prefHeight="19.0" prefWidth="60.0" stylesheets="@../values/style.css" text="+" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="inKaffee" minWidth="30.0" mnemonicParsing="false" onAction="#anzahl" prefHeight="26.0" prefWidth="2.0" stylesheets="@../values/style.css" text="-" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                   </buttons>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </ButtonBar>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="415.0" prefWidth="269.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="118.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="33.0" prefWidth="157.0" text="Cappuccino" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="preisCappuccino" prefHeight="36.0" prefWidth="156.0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@coffee.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox alignment="CENTER" prefHeight="125.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="59.0" prefWidth="193.0" text="Anzahl:" textAlignment="CENTER" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="anzahlCappuccino" prefHeight="56.0" prefWidth="193.0" text="0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <ButtonBar buttonMinWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="144.0">
+                                                   <buttons>
+                                                      <Button fx:id="deCappuccino" mnemonicParsing="false" onAction="#anzahl" prefHeight="19.0" prefWidth="60.0" stylesheets="@../values/style.css" text="+" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="inCappuccino" minWidth="30.0" mnemonicParsing="false" onAction="#anzahl" prefHeight="26.0" prefWidth="2.0" stylesheets="@../values/style.css" text="-" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                   </buttons>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </ButtonBar>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="415.0" prefWidth="255.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="123.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="34.0" prefWidth="160.0" text="Espresso" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="preisEspresso" prefHeight="42.0" prefWidth="135.0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <ImageView fitHeight="153.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ecpresso.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox alignment="CENTER" prefHeight="126.0" prefWidth="272.0">
+                                             <children>
+                                                <Label prefHeight="57.0" prefWidth="243.0" text="Anzahl:" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font name="Arial" size="24.0" />
+                                                   </font>
+                                                   <opaqueInsets>
+                                                      <Insets left="111.0" />
+                                                   </opaqueInsets>
+                                                </Label>
+                                                <Label fx:id="anzahlEspresso" prefHeight="62.0" prefWidth="217.0" text="0" textFill="#0b0d0f">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <ButtonBar buttonMinWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="144.0">
+                                                   <buttons>
+                                                      <Button fx:id="deEspresso" mnemonicParsing="false" onAction="#anzahl" prefHeight="19.0" prefWidth="60.0" stylesheets="@../values/style.css" text="+" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Button fx:id="inEspresso" minWidth="30.0" mnemonicParsing="false" onAction="#anzahl" prefHeight="26.0" prefWidth="2.0" stylesheets="@../values/style.css" text="-" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="search-button2" />
+                                                            <String fx:value="shadow" />
+                                                         </styleClass>
+                                                      </Button>
+                                                   </buttons>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </ButtonBar>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="166.0" prefWidth="902.0">
+                                 <children>
+                                    <Label prefHeight="36.0" prefWidth="230.0" text="Gesatmtbetrag in €" textFill="#0b0d0f">
+                                       <font>
+                                          <Font name="Arial" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="gesamtbetrag" prefHeight="29.0" prefWidth="90.0" text="0,00" textFill="#0b0d0f">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#bestellInfos" prefHeight="33.0" prefWidth="257.0" stylesheets="@../values/style.css" text="Bestellen" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <styleClass>
+                                          <String fx:value="search-button2" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </Button>
+                                    <VBox alignment="CENTER" prefHeight="123.0" prefWidth="224.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#konfigurieren" prefHeight="15.0" prefWidth="190.0" stylesheets="@../values/style.css" text="Admin: Konfigurieren" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="Arial" size="17.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="search-button2" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#abbrechen" prefHeight="22.0" prefWidth="192.0" stylesheets="@../values/style.css" text="Beenden" textFill="WHITE">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <font>
+                                                <Font name="Arial" size="17.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="search-button2" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="30.0" left="100.0" right="100.0" top="30.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="cards" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
